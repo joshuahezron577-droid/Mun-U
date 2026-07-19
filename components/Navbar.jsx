@@ -1,11 +1,11 @@
-    
-    
+import Link from 'next/link';
+
 export default function Navbar() {
   return (
-    // Nimeongeza 'mb-0' na 'shadow-none' (kama shadow ndiyo inaleta gap) 
-    // na kuhakikisha z-index ni kubwa zaidi
     <div className="navbar bg-base-200 shadow-none sticky top-0 z-[50] min-h-[64px] px-4 md:px-6 lg:px-8">
-      <div className="navbar-start pr-4 md:pr-6 lg:pr-8">
+      
+      {/* 1. Navbar Start - Logo */}
+      <div className="navbar-start">
         {/* Mobile Menu */}
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,13 +20,13 @@ export default function Navbar() {
             <li><a href="#Gallery">Gallery</a></li>
           </ul>
         </div>
-        <a href="/" className="flex items-center gap-3 py-2">
-          <img src="/Images/Mun-Logo.png" alt="Mun Logo" className="h-10 w-10 object-contain ml-5" />
+        <a href="/" className="flex items-center gap-3">
+          <img src="/Images/Mun-Logo.png" alt="Mun Logo" className="h-10 w-10 object-contain" />
           <span className="text-xl font-bold tracking-wide">MUN</span>
         </a>
       </div>
 
-      {/* Desktop Menu */}
+      {/* 2. Navbar Center - Links (Hii ndiyo inakaa katikati) */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-4">
           <li><a href="/">Home</a></li>
@@ -36,9 +36,14 @@ export default function Navbar() {
         </ul>
       </div>
 
-      <div className="navbar-end pl-4 md:pl-6 lg:pl-8">
+      {/* 3. Navbar End - Buttons (Hizi zinakaa kulia) */}
+      <div className="navbar-end gap-2">
         <a href="/login" className="btn btn-primary btn-sm">Login</a>
+        <Link href="/calculator" className="btn btn-primary btn-sm">
+          Ngori
+        </Link>
       </div>
+      
     </div>
   );
 }

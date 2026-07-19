@@ -1,10 +1,12 @@
+   
 export default function AboutUs() {
   return (
+    <>
     <section className="container mx-auto max-w-6xl px-4">
       
       {/* SEHEMU YA JUU: Heading na Paragraph */}
       <div className="text-center mb-12 space-y-4">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-blue-950">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-blue-950 hover:text-red-600 transion ease">
           About Us
         </h1>
         <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
@@ -45,5 +47,7 @@ export default function AboutUs() {
 
       </div>
     </section>
+    
+    </>
   );
 }
